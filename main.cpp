@@ -21,7 +21,8 @@ using namespace std;
 
 int main(int argc, char** argv) {
    
-    ifstream input_file("/Users/macbookpro/NetBeansProjects/Lab1/INPUT.txt");
+    ifstream input_file("/Users/macbookpro/NetBeansProjects/Lab1/Input.txt");
+    ofstream output_file("/Users/macbookpro/NetBeansProjects/Lab1/Output.txt");
     string str ;
     string pattern;
     int n=0;
@@ -33,9 +34,10 @@ int main(int argc, char** argv) {
    //поиск pattern и считаем по кол-ву номеров с которых начинается pattern
     for (i=str.find(pattern,i);i!=string::npos; i=str.find(pattern,i+1)){
         n++;
-       // cout<<i<<endl;
     }
-    
+    output_file<<n;
+    output_file.close();
+    input_file.close();
     
     cout<<n;
  
