@@ -15,18 +15,25 @@
 #include <cstdlib>
 #include <iostream>
 #include <string>
-
+#include <fstream>
 using namespace std;
 
 
 int main(int argc, char** argv) {
-    string str = "fabcdeabfgabchfabc";
-    string pattern ="abc";
+   
+    ifstream input_file("/Users/macbookpro/NetBeansProjects/Lab1/INPUT.txt");
+    string str ;
+    string pattern;
     int n=0;
     int i=0;
+   //считываем первую строку
+    getline(input_file, str, '\n' );
+   //считываем вторую строку
+    getline(input_file,pattern,'\n');
+   //поиск pattern и считаем по кол-ву номеров с которых начинается pattern
     for (i=str.find(pattern,i);i!=string::npos; i=str.find(pattern,i+1)){
         n++;
-        cout<<i<<endl;
+       // cout<<i<<endl;
     }
     
     
