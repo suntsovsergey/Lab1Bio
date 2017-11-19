@@ -39,7 +39,7 @@ int main(int argc, char** argv) {
     output_file.close();
     input_file.close();
     
-    cout<<n;
+    
  
     return 0;
 }
